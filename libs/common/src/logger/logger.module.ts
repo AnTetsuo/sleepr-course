@@ -6,9 +6,10 @@ import { LoggerModule as PinoLoggerModule } from 'nestjs-pino';
     PinoLoggerModule.forRoot({
       pinoHttp: {
         transport: {
-          target: 'pino',
+          target: 'pino-pretty',
           options: {
             singleLine: true,
+            colorize: true,
           },
         },
       },
