@@ -5,7 +5,7 @@ import { UsersModule } from './users/users.module';
 import { LoggerModule } from '@app/common';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { LocalStrategy } from './strategies/loca.strategy';
+import { LocalStrategy } from './strategies/local.strategy';
 import * as Joi from 'joi';
 
 @Module({
