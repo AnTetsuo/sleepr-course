@@ -2,6 +2,7 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UsersRepository } from './users.repository';
 import * as bcrypt from 'bcryptjs';
+import { GetUserDto } from './dto/get-user.dto';
 @Injectable()
 export class UsersService {
   constructor(private readonly usersRepository: UsersRepository) {}
@@ -22,5 +23,9 @@ export class UsersService {
     }
 
     return user;
+  }
+
+  async getUser(getUserDto: GetUserDto) {
+    return await this.usersRepository.findOne(getUserDto);
   }
 }
